@@ -1,6 +1,6 @@
 #ifndef SO_LONG
 # define SO_LONG
-//erdem Dokunus
+
 #include <stdio.h>
 #include <unistd.h>
 #include "minilibx/mlx.h"
