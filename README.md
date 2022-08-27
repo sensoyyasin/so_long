@@ -40,16 +40,19 @@ an error.
 • You must be able to parse any kind of map, as long as it respects the above rules.
 • Another example of a minimal .ber map:
 • If any misconfiguration of any kind is encountered in the file, the program must exit in a clean way, and return "Error\n" followed by an explicit error message of your choice.
+
 1111111111111
 10010000000C1
 1000011111001
 1P0011E000001
+
 • The map must be rectangular.
 • The map must be closed/surrounded by walls. If it’s not, the program must return
 an error.
 • You have to check if there’s a valid path in the map.
 • You must be able to parse any kind of map, as long as it respects the above rules.
 • Another example of a minimal .ber map:
+
 1111111111111111111111111111111111
 1E0000000000000C00000C000000000001
 1010010100100000101001000000010101
