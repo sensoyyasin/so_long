@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 10:59:39 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/08/27 14:17:16 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:20:49 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	leftcoin(t_img *so_long);
 void	rightcoin(t_img *so_long);
 void	downcoin(t_img *so_long);
 
-void	allfunc(int argc, t_img *so_long);
+void	allfunc(t_img *so_long);
 void	isrectangular(t_img *so_long);
 void	ismaptrue(t_img *so_long);
 void	iswalltrue(t_img *so_long);

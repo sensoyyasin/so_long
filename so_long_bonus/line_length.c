@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:40:48 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/08/27 15:53:41 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:14:10 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ int	line_length(t_img *so_long)
 
 void	put_xpm(t_img *so_long)
 {
-	int	x;
-	int	y;
-
 	addimage(so_long);
 	addanimation(so_long, so_long->index);
 	addanimation2(so_long, so_long->index);

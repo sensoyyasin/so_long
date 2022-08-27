@@ -1,6 +1,6 @@
 NAME = mlx.a
 SRC = $(wildcard *.c)
-CC = gcc -g
+CC = gcc -Wall -Wextra -Werror
 CFLAGS = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c libft.a -lmlx -framework OpenGL -framework AppKit -L ./minilibx
 OBJ = $(SRC:.c = .o)
 

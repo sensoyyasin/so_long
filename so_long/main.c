@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 19:45:54 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/08/27 14:18:17 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:25:17 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	mapdonder(t_img *so_long)
 {
 	int		fdmap;
-	char	c;
 	int		i;
 	int		uz_y;
 
@@ -45,15 +44,15 @@ int	main(int argc, char **map_input)
 	mlx = mlx_init();
 	img->mlx = mlx;
 	img->map_input = map_input;
-	definevar(img);
 	isargtrue(img);
+	definevar(img);
 	mlx_win = mlx_new_window(mlx,
 			column_length(img) * 32,
 			(line_length(img) * 32) + 10, "LUKA MAGIC");
 	img->mlx_win = mlx_win;
 	mapdonder(img);
 	put_xpm(img);
-	allfunc(argc, img);
+	allfunc(img);
 	coin_counter(img);
 	mlx_hook(img->mlx_win, 2, 1L << 0, push_button, &img->mlx);
 	mlx_hook(img->mlx_win, 17, (0L), push_button, img);

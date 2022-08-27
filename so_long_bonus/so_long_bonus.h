@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 11:33:31 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/08/27 14:49:23 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:18:33 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ void	turndown(t_img *so_long);
 void	turnright(t_img *so_long);
 void	coin_counter(t_img *so_long);
 
-void	allfunc(int argc, t_img *so_long);
+void	allfunc(t_img *so_long);
 void	isrectangular(t_img *so_long);
 void	ismaptrue(t_img *so_long);
 void	iswalltrue(t_img *so_long);
-void	isargtrue(int argc, t_img *so_long);
+void	isargtrue(t_img *so_long);
 void	isduplicate(t_img *so_long, int i, int j);
 void	iscollectible(t_img *so_long);
 void	enemy_position(t_img *so_long);
@@ -78,6 +78,7 @@ void	leftcoin(t_img *so_long);
 void	downcoin(t_img *so_long);
 void	rightcoin(t_img *so_long);
 void	ex_controller(t_img *so_long);
+void	string_put(t_img *so_long);
 
 int		addanimation(t_img *so_long, int index);
 int		addanimation2(t_img *so_long, int index);

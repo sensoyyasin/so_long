@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:41:00 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/08/27 12:39:39 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:14:23 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	enemy_location(t_img *so_long)
 	}
 }
 
-void	move_enemytwo(t_img *so_long, int index)
+void	move_enemytwo(t_img *so_long)
 {
 	so_long->d_ly = 1;
 	if (so_long->map[so_long->d_ly][so_long->d_lx] == 'P')
@@ -65,5 +65,5 @@ void	move_enemy(t_img *so_long, int index)
 	}
 	else if (so_long->map[so_long->d_ly + 1][so_long->d_lx] == '1'
 		&& so_long->index % 10 == 6)
-		move_enemytwo(so_long, index);
+		move_enemytwo(so_long);
 }

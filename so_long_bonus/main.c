@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:40:38 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/08/27 16:07:30 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:18:40 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	mapdonder(t_img *so_long)
 {
 	int		fdmap;
-	char	c;
 	int		i;
 	int		uz_y;
 
@@ -43,7 +42,37 @@ int	hookfunc(t_img *so_long)
 	move_enemy(so_long, so_long->index);
 	mlx_clear_window(so_long->mlx, so_long->mlx_win);
 	put_xpm(so_long);
+	string_put(so_long);
 	return (0);
+}
+
+char	*ft_strjoin3(char const *s1, const char *s2)
+{
+	char	*str;
+	size_t	len;
+
+	if (!s1 || !s2)
+		return (0);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
+	ft_strlcpy(str, s1, ft_strlen(s1) + 1);
+	ft_strlcat(str, s2, len + 1);
+	return (str);
+}
+
+void	string_put(t_img *so_long)
+{
+	char	*str;
+	char	*s;
+
+	str = ft_itoa(so_long->g_move);
+	s = ft_strjoin3("Move : ", str);
+	mlx_string_put(so_long->mlx, so_long->mlx_win, 10,
+		(10), 0x00ff00, s);
+	free(str);
+	free(s);
 }
 
 int	main(int argc, char **map_input)
@@ -58,7 +87,7 @@ int	main(int argc, char **map_input)
 	mlx = mlx_init();
 	img->mlx = mlx;
 	img->map_input = map_input;
-	isargtrue(argc, img);
+	isargtrue(img);
 	definevar(img);
 	mlx_win = mlx_new_window(mlx, column_length(img) * 32,
 			(line_length(img) * 32), "LUKA MAGIC");
@@ -66,11 +95,9 @@ int	main(int argc, char **map_input)
 	mapdonder(img);
 	put_xpm(img);
 	mlx_hook(img->mlx_win, 2, 1L << 0, push_button, img);
-	mlx_string_put(img->mlx, img->mlx_win, column_length(img) * 32,
-		(line_length(img) * 32), 0xffffff, ft_itoa(img->g_move));
-	//mlx_loop_hook(mlx, hookfunc, img);
+	mlx_loop_hook(mlx, hookfunc, img);
 	move_enemy(img, img->index);
-	allfunc(argc, img);
+	allfunc(img);
 	coin_counter(img);
 	mlx_loop(mlx);
 	free(img->map);

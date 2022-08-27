@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:32:09 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/08/27 14:49:12 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:19:10 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,8 @@ void	ismaptrue(t_img *so_long)
 	}
 }
 
-void	isargtrue(int argc, t_img *so_long)
+void	isargtrue(t_img *so_long)
 {
-	int	i;
 	int	len;
 
 	len = ft_strlen(so_long->map_input[1]);
@@ -110,7 +109,7 @@ void	iscollectible(t_img *so_long)
 	}
 }
 
-void	allfunc(int argc, t_img *so_long)
+void	allfunc(t_img *so_long)
 {
 	isrectangular(so_long);
 	ismaptrue(so_long);

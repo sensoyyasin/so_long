@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 19:48:37 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/08/27 14:01:52 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:24:38 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	isargtrue(t_img *so_long)
 {
-	int	i;
 	int	len;
 
 	len = ft_strlen(so_long->map_input[1]);
@@ -109,11 +108,12 @@ void	iscollectible(t_img *so_long)
 	}
 }
 
-void	allfunc(int argc, t_img *so_long)
+void	allfunc(t_img *so_long)
 {
 	isrectangular(so_long);
 	ismaptrue(so_long);
 	iscollectible(so_long);
 	iswalltrue(so_long);
 	isduplicate(so_long, 0, 0);
+	isargtrue(so_long);
 }
