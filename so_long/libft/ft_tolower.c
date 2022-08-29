@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:14:18 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:11 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/02 11:19:41 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:36:26 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
+	{
 		c = c + 32;
+	}
 	return (c);
 }

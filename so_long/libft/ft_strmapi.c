@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:17:28 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/13 18:01:47 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/14 17:41:56 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:35:47 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,22 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*str;
-	int		len;
+	char	*dizi;
+	size_t	uz;
+	size_t	i;
 
-	i = 0;
 	if (!s || !f)
-		return (NULL);
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
 		return (0);
-	while (s[i] != '\0')
+	uz = ft_strlen2(s);
+	i = 0;
+	dizi = malloc(uz + 1);
+	if (!dizi)
+		return (0);
+	while (i < uz)
 	{
-		str[i] = (*f)(i, s[i]);
+		dizi[i] = (*f)(i, s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	dizi[i] = '\0';
+	return (dizi);
 }
-/*
-char	ft_printf(unsigned int i,char c)
-{
-	c = c - 32;
-	return (c);
-}
-
-int	main()
-{
-	char y[] = "yasin";
-	printf("%s",ft_strmapi(y, &ft_printf));
-}*/

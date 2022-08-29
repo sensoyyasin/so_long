@@ -3,34 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:14:44 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:40 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/01/31 19:10:12 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:31:29 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *giren, size_t n)
 {
-	size_t	i;
-	char	*str;
+	size_t	a;
 
-	i = 0;
-	str = (char *)s;
-	while (i < n)
+	a = 0;
+	while (a < n)
 	{
-		str[i] = '\0';
-		i++;
+		((unsigned char *) giren)[a] = '\0';
+		a++;
 	}
-	return (str);
+	return (giren);
 }
-
-/*#include <stdio.h>
-int	main()
-{
-	char dizi[] = "yasintemp";
-	printf("%s",ft_bzero(dizi,5));
-	//printf("%s",bzero(dizi,5));
-}*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 14:34:18 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/14 16:07:16 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/16 19:00:56 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:33:38 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

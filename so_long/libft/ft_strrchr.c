@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:17:47 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/15 10:37:51 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/02 12:43:34 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:36:06 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,12 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 
-	i = ft_strlen(s);
+	i = ft_strlen2(s);
 	while (i >= 0)
 	{
-		if (s[i] == (char)c)
-		{
+		if (s[i] == (unsigned char)c)
 			return ((char *)s + i);
-		}
 		i--;
 	}
 	return (NULL);
 }
-/*
-int	main()
-{
-	char dizi[] = "bonjour";
-	printf("%s",(ft_strrchr(dizi,'o')));
-}
-*/

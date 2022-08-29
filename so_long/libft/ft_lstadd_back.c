@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 11:02:10 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/13 11:32:54 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/15 19:21:49 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:32:49 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

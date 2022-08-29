@@ -3,37 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:16:43 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/11 12:22:40 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/09 11:37:55 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:35:13 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *src)
 {
+	char	*p;
 	int		i;
-	char	*src;
-	char	*dest;
+	int		e;
 
-	i = 0;
-	src = (char *)s1;
-	dest = (char *)malloc(ft_strlen(src) + 1);
-	if (dest == 0)
+	e = 0;
+	i = ft_strlen2(src);
+	p = (char *) malloc(i + 1);
+	if (p == NULL)
 		return (NULL);
-	while (src[i] != '\0')
+	while (src[e] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		p[e] = src[e];
+		e++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	p[i] = '\0';
+	return (p);
 }
-/*
-int	main()
-{
-	char	yasin[] = "yasintemp";
-	printf("%s",ft_strdup(yasin));
-}*/

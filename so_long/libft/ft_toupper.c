@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:18:07 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:09 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/02 11:11:41 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:36:32 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
+	{
 		c = c - 32;
+	}
 	return (c);
 }

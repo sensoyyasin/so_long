@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:14:36 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/17 11:39:11 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/08 11:26:34 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:31:47 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,28 @@
 
 int	ft_atoi(const char *str)
 {
-	long long	s;
-	int			d;
+	int	d;
+	int	s;
 
-	s = 0;
 	d = 1;
-	while ((*str < 14 && *str > 8) || *str == 32)
-		str++;
+	s = 0;
+	while (*str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r' || *str == ' ')
+			str++;
 	if (*str == '-')
 	{
-		d *= -1;
+		d = d * -1;
 		str++;
 	}
 	else if (*str == '+')
 		str++;
+	if (*str == '-' || *str == '+')
+		return (0);
 	while (*str >= '0' && *str <= '9')
 	{
-		s = (s * 10) + (*str - 48);
+		s = (s * 10);
+		s = s + (*str - '0');
 		str++;
-		if (s > 2147483647 && d == 1)
-			return (-1);
-		else if (s > 2147483648 && d == -1)
-			return (0);
 	}
-	return ((int)(s * d));
+	return (s * d);
 }
-/*
-int	main()
-{
-	char	yasin[] = " -21474836555111111111111";
-	printf("%d\n",ft_atoi(yasin));
-	printf("%d",atoi(yasin));
-}*/

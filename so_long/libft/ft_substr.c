@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:17:58 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/18 11:54:07 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/09 17:34:00 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:36:20 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	src = (char *)s;
 	if (!src)
 		return (NULL);
-	if (start >= ft_strlen(s))
+	if (start >= ft_strlen2(s))
 	{
 		str = (char *)malloc(sizeof(char));
 		if (!str)
@@ -31,8 +31,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	}
 	else
 	{
-		if ((ft_strlen(s) - start) < len)
-			len = ft_strlen(s) - start;
+		if ((ft_strlen2(s) - start) < len)
+			len = ft_strlen2(s) - start;
 		str = (char *)malloc((sizeof(char) * len) + 1);
 		if (!str)
 			return (NULL);
@@ -40,9 +40,3 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	}
 	return (str);
 }
-/*
-int	main()
-{
-	char	yasin[] = "yasintemp";
-	printf("%s",ft_substr(yasin,3,4));
-}*/

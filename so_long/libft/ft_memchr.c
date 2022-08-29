@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:15:39 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/17 13:08:31 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/02 13:35:20 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:33:59 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,18 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
+	unsigned char	*k;
 	size_t			i;
-	int				k;
-	unsigned char	*str;
+	int				kon;
 
 	i = 0;
-	k = 0;
-	str = (unsigned char *)s;
-	if (n == i)
-		return (NULL);
+	kon = 0;
+	k = (unsigned char *)s;
 	while (i < n)
 	{
-		if (str[i] == (unsigned char)c)
-			return (&str[i]);
-		else
-			k = 1;
+		if (k[i] == (unsigned char)c)
+			return (&k[i]);
 		i++;
 	}
-	if (k == 1)
-		return (0);
-	else
-		return (&str[i]);
+	return (0);
 }
-/*
-int	main()
-{
-	char cp[] = "bilgisayar";
-	char cd = 'g';
-	printf("%c karakterin bellek adresi %p\n", cd, ft_memchr(cp, cd, 2));
-	printf("%c karakterin bellek adresi %p\n", cd, memchr(cp, cd, 2));
-	return 0;
-}*/

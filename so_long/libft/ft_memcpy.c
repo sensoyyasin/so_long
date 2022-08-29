@@ -3,30 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:15:50 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 19:42:43 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/01 11:04:08 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:34:11 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *gelen, const void *in, size_t b)
 {
 	size_t	i;
-	char	*str1;
-	char	*str2;
 
 	i = 0;
-	str1 = (char *)src;
-	str2 = (char *)dst;
-	if (!str1 && !str2)
+	if (!gelen && !in)
 		return (NULL);
-	while (i < n)
+	while (i < b)
 	{
-		str2[i] = str1[i];
+		((unsigned char *)gelen)[i] = ((unsigned char *)in)[i];
 		i++;
 	}
-	return (str2);
+	return (gelen);
 }

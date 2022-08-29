@@ -3,45 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:15:55 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/18 12:04:22 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/01 12:56:55 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:34:17 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *gelen, const void *in, size_t b)
 {
-	size_t	i;
-
-	i = 0;
-	if ((char *)src > (char *)dst)
+	if (!gelen && !in)
+		return (NULL);
+	if (gelen < in)
+		ft_memcpy (gelen, in, b);
+	else if (gelen > in)
 	{
-		while (i < len)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
+		while (b--)
+			*((unsigned char *)(gelen + b)) = *((unsigned char *)(in + b));
 	}
-	i = len;
-	i--;
-	if ((char *)src < (char *)dst)
-	{
-		while (len--)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i--;
-		}
-	}
-	return ((char *)dst);
+	return (gelen);
 }
-/*
-int	main()
-{
-	char dest[50] = "fatihcil";
-	printf("%s",ft_memmove(dest + 2,dest ,4));
-	//printf("%s",ft_memmove(dest + 1, dest + 3, 4));
-}*/

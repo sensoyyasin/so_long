@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 12:59:54 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/15 13:36:10 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/16 13:09:48 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:33:25 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

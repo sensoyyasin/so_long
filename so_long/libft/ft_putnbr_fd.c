@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:16:26 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/17 13:07:23 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/14 19:34:35 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:34:41 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		ft_putnbr_fd(147483648, fd);
-	}
+		ft_putstr_fd("-2147483648", fd);
+	else if (n == 2147483647)
+		ft_putstr_fd("2147483647", fd);
 	else if (n < 0)
 	{
-		n = -n;
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(n, fd);
+		write(fd, "-", 1);
+		ft_putnbr_fd(n * -1, fd);
 	}
 	else if (n < 10)
 	{
@@ -36,10 +33,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 }
-/*
-int	main()
-{
-	int	i = open ("my.txt",O_WRONLY);
-	printf("%d",i);
-	ft_putnbr_fd(125,i);
-}*/

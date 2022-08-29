@@ -3,46 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:17:07 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/17 10:20:46 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/01 16:55:20 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:35:34 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
-	size_t			a;
-	size_t			b;
-	unsigned char	*s;
+	size_t	i;
 
-	a = 0;
-	b = 0;
-	s = (unsigned char *)src;
-	while (s[a] != '\0')
-		a++;
-	if (dstsize != 0)
+	i = 0;
+	if (n > 0)
 	{
-		while (s[b] != '\0' && b < dstsize - 1)
+		while (i < (n - 1) && src[i])
 		{
-			dst[b] = s[b];
-			b++;
+			dest[i] = src[i];
+			i++;
 		}
-		dst[b] = '\0';
+		dest[i] = '\0';
 	}
-	return (a);
+	return (ft_strlen2(src));
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main()
-{
-	char dizi1[30] = "yasintemp";
-	char dizi2[50] = "mehmetyasin";
-
-	ft_strlcpy(dizi1,dizi2,20);
-	printf("%zu\n", ft_strlcpy(dizi1,dizi2,20));
-}*/

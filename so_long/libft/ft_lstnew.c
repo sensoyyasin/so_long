@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 12:07:19 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 19:33:35 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/15 17:56:07 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:33:47 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*my;
 
-	my = (t_list *)malloc(sizeof(t_list));
+	my = malloc(sizeof(t_list));
 	if (!my)
-		return (NULL);
+		return (0);
 	my -> content = content;
 	my -> next = NULL;
 	return (my);

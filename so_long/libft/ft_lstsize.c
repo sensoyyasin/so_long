@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 15:31:46 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 15:56:50 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/15 19:07:37 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:33:54 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	while (lst)
+	while (lst != NULL)
 	{
 		lst = lst -> next;
 		i++;

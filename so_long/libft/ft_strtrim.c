@@ -3,61 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:17:54 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/14 16:01:11 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/11 15:49:14 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 21:36:12 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_checkset(char c, char const *set)
+char	*sondonus(char *bas, char *son)
 {
-	size_t	index;
+	char	*ol;
+	int		size;
+	int		i;
 
-	index = 0;
-	while (set[index])
+	i = 0;
+	size = son - bas;
+	ol = malloc(size + 2);
+	if (!ol)
+		return (NULL);
+	while (i <= size)
 	{
-		if (set[index] == c)
+		ol[i] = *bas;
+		bas++;
+		i++;
+	}
+	ol[i] = '\0';
+	return (ol);
+}
+
+int	kontrol(char c, char *g)
+{
+	while (*g != '\0')
+	{
+		if (c == *g)
 			return (1);
-		index++;
+		g++;
 	}
 	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	size_t	index;
-	size_t	start;
-	size_t	end;
+	int			i;
+	size_t		a;
+	char const	*bas;
+	char const	*son;
+	char		*gelen;
 
-	start = 0;
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
-	end = ft_strlen(s1);
-	while (s1[start] && ft_checkset(s1[start], set))
-		start++;
-	while (end > start && ft_checkset(s1[end - 1], set))
-		end--;
-	str = (char *)malloc(sizeof (char) * (end - start) + 1);
-	if (!str)
-		return (NULL);
-	index = 0;
-	while (start < end)
-	{
-		str[index] = s1[start];
-		start++;
-		index++;
-	}
-	str[index] = '\0';
-	return (str);
+	i = 0;
+	a = ft_strlen2(s1) - 1 ;
+	while (kontrol(s1[i], (char *)set))
+		i++;
+	bas = &s1[i];
+	while (kontrol(s1[a], (char *)set))
+		a--;
+	son = &s1[a];
+	if (son - bas < 0)
+		return (ft_strdup(""));
+	gelen = sondonus((char *)bas, (char *)son);
+	return (gelen);
 }
-/*
-int	main()
-{
-	char	yasin[] = "xxxenxxx";
-	char	mete[] = "x";
-	printf("%s",ft_strtrim(yasin,mete));
-}*/
