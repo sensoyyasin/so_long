@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:55:32 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/09 11:33:17 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 10:14:51 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/09 10:18:39 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*yer;
+	void	*p;
 
-	yer = malloc(count * size);
-	if (yer == 0)
-		return (0);
-	ft_bzero (yer, count * size);
-	return (yer);
+	p = malloc(count * size);
+	if (p == NULL)
+		return (p);
+	ft_bzero(p, count * size);
+	return (p);
 }

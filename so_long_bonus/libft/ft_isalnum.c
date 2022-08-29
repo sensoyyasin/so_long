@@ -3,17 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 15:44:38 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/07 14:18:13 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 10:14:57 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/09 10:18:38 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_isalnum(int i)
+int	ft_isalnum(int c)
 {
-	if ((ft_isdigit (i) == 1 || ft_isalpha (i) == 1) && ft_isascii (i) == 1)
+	if ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z'))
 		return (1);
-	return (0);
+	else if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
+
+/*#include <stdio.h>
+
+int	main()
+{
+	printf("%d",ft_isalnum('a'));
+}*/

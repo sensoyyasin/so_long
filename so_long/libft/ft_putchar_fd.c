@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 19:09:16 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/17 13:02:22 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 10:14:31 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/09 10:18:28 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+//#include <fcntl.h>
 
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+/*
+int	main(void)
+{
+	int	i = open("my.txt",O_WRONLY);
+	int	c = open("taha.txt",O_WRONLY);
+	printf("%d",i);
+	printf("\n%d",c);
+	ft_putchar_fd('a',i);
+	ft_putchar_fd('y',c);
+}*/

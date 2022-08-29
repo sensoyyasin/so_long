@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 15:34:08 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/17 13:11:44 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/12 17:25:04 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/15 11:21:50 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-
-static char	*ft_word(char *str, const char *s1, int son, int wordlen)
-{
-	int	i;
-
-	i = 0;
-	while (i < wordlen)
-	{
-		str[i] = s1[son - wordlen + i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
 
 static char	**ft_place(char **str, char const *s1, char ch, int wordcount)
 {
@@ -43,10 +30,7 @@ static char	**ft_place(char **str, char const *s1, char ch, int wordcount)
 			word_len++;
 			index++;
 		}
-		str[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (!str)
-			return (0);
-		ft_word(str[word], s1, index, word_len);
+		str[word] = ft_substr(s1, index - word_len, word_len);
 		word_len = 0;
 		word++;
 	}
@@ -56,8 +40,8 @@ static char	**ft_place(char **str, char const *s1, char ch, int wordcount)
 
 static int	strcount(char const *str, char c)
 {
-	int	i;
-	int	count;
+	int		i;
+	int		count;
 
 	i = 0;
 	count = 0;
@@ -83,7 +67,7 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (0);
 	wrdcnt = strcount(s, c);
-	str = malloc(sizeof(char *) * (wrdcnt + 1));
+	str = (char **)malloc(sizeof(char *) * wrdcnt + 1);
 	if (!str)
 		return (0);
 	ft_place(str, s, c, wrdcnt);

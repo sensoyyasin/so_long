@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muyazici <muyazici@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 12:22:16 by muyazici          #+#    #+#             */
-/*   Updated: 2022/03/01 16:27:46 by muyazici         ###   ########.fr       */
+/*   Created: 2022/03/01 12:22:16 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/08/29 12:31:59 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

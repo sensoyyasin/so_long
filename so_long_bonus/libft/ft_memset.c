@@ -3,23 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 16:57:41 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/05 12:31:27 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 10:16:01 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/09 10:18:29 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memset(void *gelen, int a, size_t b)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
+	char	*str;
 
 	i = 0;
-	while (i < b)
+	str = (char *)b;
+	while (i < len)
 	{
-		((unsigned char *)gelen)[i] = a;
+		str[i] = c;
 		i++;
 	}
-	return (gelen);
+	return (b);
 }
+
+/*int	main()
+{
+	char dizi[30] = "yasintemp";
+	ft_putstr(ft_memset(dizi,'x',4));
+}*/

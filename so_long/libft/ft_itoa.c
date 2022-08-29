@@ -3,103 +3,92 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 17:03:55 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/17 13:00:30 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 10:15:32 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/13 17:58:12 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-static	int	uz(int b)
+static char	*ft_strrev(char	*s)
 {
-	int	i;
+	int		temp;
+	int		len;
+	int		i;
+	char	*str;
 
+	temp = 0;
 	i = 0;
-	while (b > 0)
+	str = s;
+	len = ft_strlen(s) - 1;
+	while (i < len)
 	{
-		b = b / 10;
+		temp = s[len];
+		s[len] = str[i];
+		str[i] = temp;
+		len--;
 		i++;
 	}
-	return (i);
+	return (str);
 }
 
-static	void	g(int b, char	*dizi, int i, int a)
+static int	ayrilacakalan(int temp)
 {
-	if (a == 1)
+	int		index;
+
+	index = 0;
+	if (temp < 0)
+		temp *= -1;
+	while (temp > 0)
 	{
-		while (i >= 0)
-		{
-			dizi[i] = b % 10 + 48;
-			b = b / 10;
-			i--;
-		}
+		temp = temp / 10;
+		index++;
 	}
-	else
-	{
-		while (i > 0)
-		{
-			dizi[i] = b % 10 + 48;
-			b = b / 10;
-			i--;
-		}
-	}
+	return (index);
 }
 
-static	char	*eksi(int n)
+static char	*ft_while(int a, char *s)
 {
-	char	*dizi;
-	int		i;
-	int		b;
+	int	i;
+	int	len;
 
-	if (n < 0)
+	i = 0;
+	len = ayrilacakalan(a);
+	if (a < 0)
 	{
-		b = n * -1;
-		i = uz(b);
-		dizi = malloc(i++ + 2);
-		if (!dizi)
-			return (0);
-		dizi[0] = '-';
-		b = n * -1;
-		dizi[i--] = '\0';
-		g (b, dizi, i, 0);
+		a *= -1;
+		s[len] = '-';
 	}
-	else
+	while (a > 0)
 	{
-		dizi = malloc(2);
-		if (!dizi)
-			return (0);
-		dizi[1] = '\0';
-		dizi[0] = '0';
+		s[i] = (a % 10) + 48;
+		a = a / 10;
+		i++;
 	}
-	return (dizi);
+	s = ft_strrev(s);
+	return (s);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*dizi;
-	int		b;
-	int		i;
+	int		temp;
+	int		len;
+	char	*s;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (n == 2147483647)
-		return (ft_strdup("2147483647"));
-	if (n > 0)
-	{
-		i = 0;
-		b = n;
-		i = uz(n);
-		dizi = malloc(i);
-		if (!dizi)
-			return (0);
-		b = n;
-		dizi[i] = '\0';
-		i--;
-		g(b, dizi, i, 1);
-		return (dizi);
-	}
-	else
-		dizi = eksi(n);
-	return (dizi);
+	else if (n == 0)
+		return (ft_strdup("0"));
+	temp = n;
+	len = ayrilacakalan(temp);
+	if (n < 0)
+		len = len + 1;
+	s = (char *)malloc((sizeof(char) * len) + 1);
+	if (!s)
+		return (0);
+	s[len] = '\0';
+	s = ft_while(temp, s);
+	return (s);
 }

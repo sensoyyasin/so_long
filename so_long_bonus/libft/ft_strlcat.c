@@ -3,30 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 16:49:38 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/06 14:45:38 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 10:17:03 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/17 10:19:21 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dstsizi)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	a;
 	size_t	de;
 	size_t	sr;
 
-	de = ft_strlen2(dest);
-	sr = ft_strlen2((char *)src);
+	de = ft_strlen(dst);
+	sr = ft_strlen((char *)src);
 	a = 0;
-	if (dstsizi <= de)
-		return (dstsizi + sr);
-	while (src[a] != '\0' && de + a + 1 < dstsizi)
+	if (dstsize <= de)
+		return (dstsize + sr);
+	while (src[a] != '\0' && de + a + 1 < dstsize)
 	{
-		dest[de + a] = src[a];
+		dst[de + a] = src[a];
 		a++;
 	}
-	dest[de + a] = '\0';
+	dst[de + a] = '\0';
 	return (de + sr);
 }
+/*
+int main(void)
+{
+	char yasintemp[55] = "yasintemp";
+	char metetemp[50] = "mete";
+	printf("%lu\n", ft_strlcat(yasintemp, metetemp, 5));
+}*/

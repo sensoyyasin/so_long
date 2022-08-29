@@ -3,24 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 19:24:42 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/17 13:09:54 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 10:16:32 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/14 11:44:59 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	if (!s)
-		return ;
-	while (s[i] != '\0')
+	if (s)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		while (s[i] != '\0')
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
 	}
 }
+/*
+int	main()
+{
+int	i = open("my.txt",O_WRONLY);
+int	c = open("taha.txt",O_WRONLY);
+printf("%d\n",i);
+printf("%d\n",c);
+ft_putstr_fd("yasin",i);
+ft_putstr_fd("taha",c);
+}*/

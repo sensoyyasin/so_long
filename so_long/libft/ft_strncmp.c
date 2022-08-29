@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 18:36:15 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/17 11:50:59 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 10:17:35 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/17 10:27:40 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
 {
 	unsigned char	*k1;
 	unsigned char	*k2;
@@ -27,3 +28,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	else
 		return (k1[i] - k2[i]);
 }
+/*
+#include <string.h>
+int	main()
+{
+	printf("%d\n",ft_strncmp("yasin","yasir",5));
+	//printf("%d",strncmp("test\200", "test\0", 6));
+}*/
